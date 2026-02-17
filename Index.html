@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oracle Protocol | The Future is Decoded</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        black: '#050505',
+                        gold: '#FFD700',
+                        purple: '#8A2BE2',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: { '0%': { opacity: '0', transform: 'translateY(10px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #050505; color: white; overflow-x: hidden; }
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .text-glow-gold { text-shadow: 0 0 15px rgba(255, 215, 0, 0.3); }
+        .gold-purple-glow { box-shadow: 0 0 30px rgba(138, 43, 226, 0.15); }
+        .card-hover:hover { border-color: #FFD700; background: rgba(138, 43, 226, 0.04); transform: translateY(-4px); cursor: pointer; }
+        .btn-gradient { background: linear-gradient(135deg, #8A2BE2 0%, #FFD700 100%); color: #000; font-weight: 800; }
+        .hidden-view { display: none; opacity: 0; }
+        .view-transition { transition: opacity 0.4s ease, transform 0.4s ease; }
+        p { line-height: 1.8; }
+        
+        .success-msg { color: #FFD700; font-weight: 600; animation: fadeIn 0.5s ease forwards; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Background Elements -->
+    <div class="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden pointer-events-none">
+        <div class="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-purple/10 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-gold/5 rounded-full blur-[120px]"></div>
+    </div>
+
+    <!-- MAIN LANDING PAGE VIEW -->
+    <main id="landing-page" class="view-transition">
+        <header class="fixed top-0 w-full z-50 px-6 py-6">
+            <nav class="max-w-7xl mx-auto glass rounded-2xl px-6 py-3 flex items-center justify-between border-white/5">
+                <!-- Code-Based Logo -->
+                <div class="flex items-center gap-1 cursor-pointer group" onclick="showView('landing-page')">
+                    <div class="relative w-8 h-8 flex items-center justify-center">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full text-gold">
+                            <circle cx="12" cy="11" r="8" stroke="currentColor" stroke-width="1.5" class="opacity-80"/>
+                            <path d="M12 7V15M8 11H16" stroke="currentColor" stroke-width="1" stroke-linecap="round" class="opacity-40"/>
+                            <path d="M9 19H15M10 21H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <circle cx="10" cy="9" r="1" fill="currentColor" class="animate-pulse"/>
+                        </svg>
+                    </div>
+                    <span class="text-xl font-extrabold tracking-tighter text-white uppercase">racle</span>
+                </div>
+                <div class="hidden md:flex items-center gap-10 text-xs font-bold uppercase tracking-widest text-gray-400">
+                    <a href="#features" class="hover:text-gold transition-colors">The Protocol</a>
+                    <a href="#waitlist" class="hover:text-purple transition-colors">Waitlist</a>
+                </div>
+                <button onclick="document.getElementById('waitlist').scrollIntoView({behavior:'smooth'})" class="bg-purple/20 border border-purple/50 text-purple-200 px-6 py-2 rounded-full text-xs font-bold hover:bg-purple hover:text-white transition-all">Alpha Terminal</button>
+            </nav>
+        </header>
+
+        <section class="pt-52 pb-24 px-6 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold/20 bg-gold/5 text-gold text-[10px] font-black mb-10 tracking-[0.3em] uppercase">
+                <span class="w-1.5 h-1.5 rounded-full bg-gold animate-ping"></span> PHASE 1: NEURAL TRAINING
+            </div>
+            <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter mb-8 leading-none">
+                The Future is <br/> <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple via-gold to-purple text-glow-gold">Decoded.</span>
+            </h1>
+            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light italic">"Market volatility is simply a lack of data triangulation."</p>
+        </section>
+
+        <!-- Feature Cards -->
+        <section id="features" class="py-20 px-6">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass p-10 rounded-3xl card-hover flex flex-col border-white/5" onclick="openDeepDive('neural')">
+                    <div class="w-14 h-14 bg-purple/10 rounded-2xl flex items-center justify-center mb-8"><i data-lucide="brain-circuit" class="text-purple w-7 h-7"></i></div>
+                    <h3 class="text-2xl font-bold mb-4 text-gold tracking-tight text-glow-gold">The Logic of Foresight</h3>
+                    <p class="text-gray-400 text-sm mb-10 flex-grow">A sophisticated neural layer designed to look beyond simple charts and into the forces that move markets.</p>
+                    <span class="text-white text-xs font-bold uppercase tracking-widest flex items-center group">Learn More <i data-lucide="arrow-right" class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"></i></span>
+                </div>
+                <div class="glass p-10 rounded-3xl card-hover flex flex-col border-white/5" onclick="openDeepDive('nfts')">
+                    <div class="w-14 h-14 bg-gold/5 rounded-2xl flex items-center justify-center mb-8"><i data-lucide="binary" class="text-gold w-7 h-7"></i></div>
+                    <h3 class="text-2xl font-bold mb-4 text-gold tracking-tight text-glow-gold">Assets of Absolute Truth</h3>
+                    <p class="text-gray-400 text-sm mb-10 flex-grow">Verifiable digital artifacts of market intellect. You aren't just predicting the market; you are owning the timeline.</p>
+                    <span class="text-white text-xs font-bold uppercase tracking-widest flex items-center group">Learn More <i data-lucide="arrow-right" class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"></i></span>
+                </div>
+                <div class="glass p-10 rounded-3xl card-hover flex flex-col border-white/5" onclick="openDeepDive('slots')">
+                    <div class="w-14 h-14 bg-purple/10 rounded-2xl flex items-center justify-center mb-8"><i data-lucide="layout-grid" class="text-purple w-7 h-7"></i></div>
+                    <h3 class="text-2xl font-bold mb-4 text-gold tracking-tight text-glow-gold">The Reputation Frontier</h3>
+                    <p class="text-gray-400 text-sm mb-10 flex-grow">Secure your seat at the high table of the protocol. Build reputation and unlock advanced neural features.</p>
+                    <span class="text-white text-xs font-bold uppercase tracking-widest flex items-center group">Learn More <i data-lucide="arrow-right" class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"></i></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Form Section -->
+        <section id="waitlist" class="py-32 px-6 text-center scroll-mt-20">
+            <div class="max-w-2xl mx-auto glass p-12 rounded-[40px] gold-purple-glow border-purple/20">
+                <div id="hero-form-container">
+                    <h2 class="text-4xl font-bold mb-6">Request Access</h2>
+                    <p class="text-gray-400 mb-10">Join the waitlist for Phase 1 neural access.</p>
+                    
+                    <form onsubmit="handleSignup(event, 'hero')" class="flex flex-col md:flex-row gap-4">
+                        <input type="email" name="email" required placeholder="institutional@email.com" class="flex-1 bg-black/50 border border-white/10 rounded-2xl px-6 py-4 focus:border-gold outline-none text-white transition-all">
+                        <button type="submit" class="btn-gradient px-10 py-4 rounded-2xl hover:scale-105 transition-transform flex items-center justify-center">
+                            <span>Initialize</span>
+                        </button>
+                    </form>
+                    <p id="hero-error" class="text-red-400 text-xs mt-4 hidden">Connection error. Please try again.</p>
+                </div>
+
+                <div id="hero-success" class="hidden py-8">
+                    <div class="flex justify-center mb-6"><i data-lucide="check-circle" class="text-gold w-12 h-12"></i></div>
+                    <p class="text-xl md:text-2xl success-msg">Welcome to the Future, Prophet. Your email is secured.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- EXPLORATION PAGE VIEW -->
+    <main id="exploration-page" class="hidden-view view-transition min-h-screen pt-12 pb-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <button onclick="showView('landing-page')" class="flex items-center gap-3 text-gray-400 hover:text-gold transition-colors mb-12 text-sm font-bold uppercase tracking-tighter">
+                <i data-lucide="move-left" class="w-5 h-5"></i> Back to Terminal
+            </button>
+
+            <div class="w-full h-80 md:h-[500px] rounded-[40px] overflow-hidden mb-16 relative">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10"></div>
+                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=2832&auto=format&fit=crop')] bg-cover bg-center opacity-50 grayscale hover:grayscale-0"></div>
+                <div class="absolute bottom-12 left-12 z-20">
+                    <h1 id="explore-headline" class="text-5xl md:text-7xl font-extrabold text-glow-gold tracking-tighter">Headline</h1>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+                <aside class="lg:col-span-1">
+                    <div class="glass p-10 rounded-3xl sticky top-24 border-white/5">
+                        <h4 class="text-gold font-black uppercase tracking-[0.2em] text-[10px] mb-8 border-b border-gold/20 pb-4">Protocol Specifications</h4>
+                        <div id="explore-summary" class="space-y-6 text-sm"></div>
+                    </div>
+                </aside>
+
+                <article class="lg:col-span-2">
+                    <div id="explore-content" class="text-gray-300 text-xl font-light leading-relaxed space-y-8"></div>
+
+                    <div class="mt-24 p-12 glass rounded-[40px] border-gold/10 text-center">
+                        <div id="dive-form-container">
+                            <h3 class="text-2xl font-bold mb-8 text-white">Secure Institutional Access</h3>
+                            <form onsubmit="handleSignup(event, 'dive')" class="max-w-md mx-auto flex flex-col md:flex-row gap-4">
+                                <input type="email" name="email" required placeholder="Email Address" class="flex-1 bg-black/40 border border-white/10 rounded-xl px-5 py-3 outline-none text-white focus:border-gold transition-all">
+                                <button type="submit" class="btn-gradient px-8 py-3 rounded-xl text-sm uppercase tracking-widest hover:scale-105 transition-transform">Join Waitlist</button>
+                            </form>
+                            <p id="dive-error" class="text-red-400 text-xs mt-4 hidden">Connection error. Please try again.</p>
+                        </div>
+                        <div id="dive-success" class="hidden py-4">
+                            <p class="text-lg success-msg">Welcome to the Future, Prophet. Your email is secured.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+   <footer class="py-16 border-t border-white/5 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+        <p class="text-gray-600 text-[10px] font-bold tracking-[0.4em] uppercase">&copy; 2026 Oracle Protocol Labs</p>
+        
+        <div class="flex gap-10 items-center">
+            <a href="https://x.com/TryOracleSlots" 
+               target="_blank" 
+               class="text-gray-500 hover:text-amber-500 transition-all flex flex-col items-center gap-1">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+                <span class="text-[8px] uppercase tracking-widest font-bold text-center">Twitter</span>
+            </a>
+
+            <a href="https://app.beehiiv.com/posts" 
+               target="_blank" 
+               class="text-gray-500 hover:text-amber-500 transition-all flex flex-col items-center gap-1">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 10.2c-.5 0-.9.4-.9.9s.4.9.9.9.9-.4.9-.9-.4-.9-.9-.9zm7.3 1.4c-.1-.3-.3-.5-.6-.6.3-.5.4-1.1.3-1.6-.1-.9-.7-1.5-1.5-1.8-.1 0-.3-.1-.4-.1.1-.4.1-.8 0-1.1-.2-.9-.9-1.6-1.8-1.7-1.1-.2-2.1.5-2.4 1.5-.3-.1-.7-.1-1-.1-.3 0-.7 0-1 .1-.3-1-1.3-1.7-2.4-1.5-.9.1-1.6.8-1.8 1.7-.1.3-.1.7 0 1.1-.1 0-.3.1-.4.1-.8.3-1.4.9-1.5 1.8-.1.6 0 1.1.3 1.6-.3.1-.5.3-.6.6-.3.6-.2 1.3.1 1.8-.1.2-.2.5-.2.7 0 .9.6 1.7 1.5 1.9.1 0 .2 0 .4.1-.1.3-.1.7-.1 1 0 .9.7 1.7 1.6 1.9 1 .2 2-.4 2.4-1.3.4.1.8.2 1.2.2.4 0 .8-.1 1.2-.2.4.9 1.4 1.5 2.4 1.3.9-.2 1.6-1 1.6-1.9 0-.3 0-.7-.1-1 .1 0 .3 0 .4-.1.9-.2 1.5-1 1.5-1.9 0-.2-.1-.5-.2-.7.3-.5.4-1.2.1-1.8zM12 16c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z"/>
+                </svg>
+                <span class="text-[8px] uppercase tracking-widest font-bold text-center">Beehiiv</span>
+            </a>
+
+          
+        </div>
+    </div>
+</footer>
+    <script>
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx8kDsRZ6-eVoOKF6p9pvSNfiP-pk9L4H1O4VjMO1PaOvaxz_UT8cijUGj8h6IbAscz7g/exec";
+
+        async function handleSignup(event, type) {
+            event.preventDefault();
+            const form = event.target;
+            const container = document.getElementById(`${type}-form-container`);
+            const successView = document.getElementById(`${type}-success`);
+            const errorView = document.getElementById(`${type}-error`);
+            const submitBtn = form.querySelector('button');
+
+            // Feedback: Processing
+            submitBtn.disabled = true;
+            submitBtn.querySelector('span') ? submitBtn.querySelector('span').innerText = "Encrypting..." : submitBtn.innerText = "Encrypting...";
+            errorView.classList.add('hidden');
+
+            try {
+                // Use FormData as it's the most reliable way to send to Google Apps Script
+                const formData = new FormData(form);
+
+                await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors' // Essential for GAS to prevent CORS blocks
+                });
+
+                // Since no-cors doesn't allow reading the response, we assume success 
+                // if the fetch doesn't throw a network error.
+                container.classList.add('hidden');
+                successView.classList.remove('hidden');
+                
+            } catch (err) {
+                console.error("Submission failed", err);
+                errorView.classList.remove('hidden');
+                submitBtn.disabled = false;
+                submitBtn.querySelector('span') ? submitBtn.querySelector('span').innerText = "Initialize" : submitBtn.innerText = "Join Waitlist";
+            }
+        }
+
+        const contentData = {
+            neural: {
+                headline: "The Logic of Foresight",
+                summary: ["Engine: Weighted Consensus Protocol", "Analysis: Multi-Vector Sentiment Mapping", "Filter: Macro Contextual Synthesis", "Performance: Institutional-grade triangulation"],
+                text: `<p class="text-white font-medium italic mb-6">"Price is a lagging indicator; reality is the lead."</p><p>At the core of the Oracle Protocol is the <strong>Triangulation Protocol</strong>, a sophisticated neural layer designed to look beyond simple charts and into the forces that move markets.</p><p>While traditional bots react to price action, the Oracle synthesizes three distinct dimensions of truth. We analyze Global News Narratives to establish context, map Social Sentiment Vectors to quantify the psychology of the crowd, and verify everything against Raw On-Chain Data.</p><p>Our Weighted Consensus model acts as a truth filter: if the social narrative is bullish but on-chain whales are quietly exiting, the Oracle prioritizes hard data over noise. The result is a high-fidelity probability score that transforms market volatility into actionable intelligence.</p>`
+            },
+            nfts: {
+                headline: "Assets of Absolute Truth",
+                summary: ["Asset: Prophecy NFT (ERC-721D)", "Verification: Oracle Accuracy Stamp", "Evolution: Dynamic Metadata Updates", "Utility: Intellectual Capitalization"],
+                text: `<p>In a world of fleeting predictions, we provide permanent proof. Every Oracle forecast is minted as a <strong>Prophecy NFT</strong>—a verifiable digital artifact of your market intellect.</p><p>When the future unfolds, your card evolves. An 'Accurate' stamp turns your foresight into a tradable, historical asset. These aren't just collectibles; they are proofs of intelligence recorded on the immutable ledger of history.</p><p>By transforming correct market intuition into a liquid asset, the Oracle Protocol allows elite thinkers to monetize their foresight, creating a secondary market for 'proven truth'. You aren't just predicting the market; you are owning the timeline.</p>`
+            },
+            slots: {
+                headline: "The Reputation Frontier",
+                summary: ["Entry: Seeker Tier Access", "Terminal: Proprietary AI Interface", "Growth: Global Reputation Score (GRS)", "Rights: High Oracle Governance"],
+                text: `<p>Prophet Slots are more than a subscription; they are your seat at the high table of the protocol. By securing a slot, you gain direct access to the <strong>AI Terminal</strong> to forge your own path.</p><p>In this ecosystem, accuracy is the only currency that matters. As you build your Global Reputation Score, you rise through the tiers from Seeker to High Oracle.</p><p>Advancing through the frontier unlocks exclusive governance rights, lower protocol fees, and access to advanced neural features like custom vector mapping. This is a meritocratic network where the most accurate voices become the architects of the protocol's future direction.</p>`
+            }
+        };
+
+        function showView(viewId) {
+            const landing = document.getElementById('landing-page');
+            const explore = document.getElementById('exploration-page');
+            if (viewId === 'landing-page') {
+                explore.style.opacity = '0';
+                setTimeout(() => { explore.style.display = 'none'; landing.style.display = 'block'; setTimeout(() => landing.style.opacity = '1', 50); }, 400);
+            } else {
+                landing.style.opacity = '0';
+                setTimeout(() => { landing.style.display = 'none'; explore.style.display = 'block'; setTimeout(() => explore.style.opacity = '1', 50); window.scrollTo(0,0); }, 400);
+            }
+        }
+
+        function openDeepDive(featureKey) {
+            const data = contentData[featureKey];
+            document.getElementById('explore-headline').innerText = data.headline;
+            document.getElementById('explore-content').innerHTML = data.text;
+            document.getElementById('explore-summary').innerHTML = data.summary.map((item, index) => 
+                `<div class="flex items-start gap-4 animate-fade-in" style="animation-delay: ${index * 100}ms">
+                    <span class="text-gold font-bold font-mono text-xs mt-1">0${index + 1}</span>
+                    <span class="text-gray-400 font-medium">${item}</span>
+                </div>`
+            ).join('');
+            lucide.createIcons();
+            showView('exploration-page');
+        }
+
+        lucide.createIcons();
+    </script>
+</body>
+</html>
