@@ -95,20 +95,67 @@
 
     <div class="container">
         <div class="card">
-            <img src="https://i.postimg.cc/d3xS6gYd/Gemini-Generated-Image-7eock67eock67eoc.png" alt="Desert Recon">
-            <div class="card-info">
-                <span class="category">POLITICS</span>
-                <div class="prediction-title">The Desert's Grim Reckoning</div>
-                <a href="buymeacoffee.com/oracle_protocol" class="btn-lock">BUY FULL INTELLIGENCE ($5)</a>
-                <a href="#capture" class="btn-lock">DECRYPT ANALYSIS</a>
-            </div>
-                <div class="card">
+    <img src="https://i.postimg.cc/d3xS6gYd/Gemini-Generated-Image-7eock67eock67eoc.png" alt="Prediction">
+    <div class="card-info">
+        <span class="category">CRYPTO</span>
+        <div class="prediction-title">The Halving Shockwave</div>
+        
+        <div id="access-terminal">
+            <input type="text" id="access-code" placeholder="ENTER ACCESS CODE" 
+                   style="width:80%; padding:10px; background:#000; border:1px solid var(--purple); color:var(--gold); margin-bottom:10px;">
+            <button onclick="unlockVault()" class="btn-lock" style="cursor:pointer;">ACCESS VAULT</button>
+        </div>
+        
+        <p id="error-msg" style="color:red; font-size:0.7rem; display:none;">> ACCESS DENIED: INVALID CREDENTIALS</p>
+    </div>
+</div>
+
+<script>
+function unlockVault() {
+    const code = document.getElementById('access-code').value.trim().toLowerCase();
+    if (code === "") return;
+    
+    // O código que você vendeu (ex: alpha7721) leva para a página alpha-7721-delta.html
+    // Você pode criar uma lógica onde o código é parte do nome do arquivo
+    if (code === "alpha7721") {
+        window.location.href = "alpha-7721-delta.html";
+    } else {
+        document.getElementById('error-msg').style.display = 'block';
+        setTimeout(() => { document.getElementById('error-msg').style.display = 'none'; }, 3000);
+    }
+}
+</script>
+               <div class="card">
     <img src="https://i.postimg.cc/K86wd1Hn/Gemini-Generated-Image-mx9od1mx9od1mx9o.png" alt="Prediction">
     <div class="card-info">
         <span class="category">CRYPTO</span>
         <div class="prediction-title">The Halving Shockwave</div>
-        <a href="buymeacoffee.com/oracle_protocol" class="btn-lock">BUY FULL INTELLIGENCE ($5)</a>
+        
+        <div id="access-terminal">
+            <input type="text" id="access-code" placeholder="ENTER ACCESS CODE" 
+                   style="width:80%; padding:10px; background:#000; border:1px solid var(--purple); color:var(--gold); margin-bottom:10px;">
+            <button onclick="unlockVault()" class="btn-lock" style="cursor:pointer;">ACCESS VAULT</button>
+        </div>
+        
+        <p id="error-msg" style="color:red; font-size:0.7rem; display:none;">> ACCESS DENIED: INVALID CREDENTIALS</p>
     </div>
+</div>
+
+<script>
+function unlockVault() {
+    const code = document.getElementById('access-code').value.trim().toLowerCase();
+    if (code === "") return;
+    
+    // O código que você vendeu (ex: alpha7721) leva para a página alpha-7721-delta.html
+    // Você pode criar uma lógica onde o código é parte do nome do arquivo
+    if (code === "alpha7721") {
+        window.location.href = "alpha-7721-delta.html";
+    } else {
+        document.getElementById('error-msg').style.display = 'block';
+        setTimeout(() => { document.getElementById('error-msg').style.display = 'none'; }, 3000);
+    }
+}
+</script>
 </div>
 </div>
         </div>
