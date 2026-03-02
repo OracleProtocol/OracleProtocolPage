@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORACLE PROTOCOL | Predictive Intelligence</title>
+    <style>
+        :root {
+            --bg: #050505;
+            --purple: #6a4c93; 
+            --gold: #d4af37;   
+            --text: #e0e0e0;
+            --card-bg: #0d0d0d;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            padding: 25px;
+            text-align: center;
+            border-bottom: 1px solid rgba(106, 76, 147, 0.4);
+            background: rgba(0,0,0,0.9);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo { color: var(--gold); font-size: 1.6rem; letter-spacing: 6px; text-transform: uppercase; margin-bottom: 5px; }
+        .status { font-size: 0.7rem; color: var(--purple); opacity: 0.8; }
+
+        .container {
+            max-width: 1100px;
+            padding: 50px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid #222;
+            padding: 20px;
+            transition: all 0.4s ease;
+        }
+
+        .card:hover { border-color: var(--purple); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(106, 76, 147, 0.1); }
+        .card img { width: 100%; height: auto; border-bottom: 1px solid #222; margin-bottom: 15px; }
+        .category { font-size: 0.65rem; color: var(--purple); letter-spacing: 2px; }
+        .prediction-title { color: var(--gold); margin: 12px 0; font-size: 1.2rem; }
+        
+        .btn-lock {
+            display: block; width: 100%; padding: 14px; background: none; border: 1px solid var(--gold);
+            color: var(--gold); text-align: center; text-decoration: none; font-size: 0.8rem;
+            margin-top: 20px; transition: 0.3s;
+        }
+
+        .btn-lock:hover { background: var(--gold); color: black; font-weight: bold; }
+
+        /* Captura & Segurança */
+        .capture-section {
+            width: 90%; max-width: 550px; margin: 80px 0; padding: 40px;
+            border: 1px solid var(--purple); background: #0a0a0a; text-align: center;
+        }
+
+        input[type="email"] {
+            width: 85%; padding: 12px; background: #000; border: 1px solid var(--purple);
+            color: white; margin-top: 25px; font-family: inherit;
+        }
+
+        .honeypot { display: none; } /* Proteção Anti-Bot */
+
+        input[type="submit"] {
+            width: 85%; padding: 12px; background: var(--purple); border: none;
+            color: white; cursor: pointer; margin-top: 15px; font-weight: bold;
+        }
+
+        footer { padding: 40px; font-size: 0.7rem; opacity: 0.4; letter-spacing: 1px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Oracle Protocol</div>
+        <div class="status">> SESSION_ID: 0x992B | STATUS: SECURE_ENCRYPTED</div>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <img src="https://i.postimg.cc/d3xS6gYd/Gemini-Generated-Image-7eock67eock67eoc.png" alt="Desert Recon">
+            <div class="card-info">
+                <span class="category">POLITICS</span>
+                <div class="prediction-title">The Desert's Grim Reckoning</div>
+                <a href="#capture" class="btn-lock">DECRYPT ANALYSIS</a>
+            </div>
+        </div>
+        </div>
+
+    <section class="capture-section" id="capture">
+        <h2 style="color: var(--gold); margin-top:0;">CREDENTIAL VERIFICATION</h2>
+        <p style="font-size: 0.9rem; opacity: 0.7;">Accessing the probability layer requires authentication.</p>
+        
+        <form id="oracle-form">
+            <input type="text" name="bot_check" class="honeypot">
+            
+            <input type="email" name="email" id="email-field" placeholder="identity@network.com" required>
+            <input type="submit" value="START AUTHENTICATION" id="submit-btn">
+        </form>
+        <div id="success-msg" style="display:none; color: var(--gold); margin-top: 20px;">
+            > [SUCCESS]: CREDENTIALS LOGGED. CHECK YOUR INBOX FOR DECRYPTION KEYS.
+        </div>
+    </section>
+
+    <footer>
+        oracleprotocol.github.io &copy; 2026 | Trust the math. Fear the data.
+    </footer>
+
+    <script>
+        // SUBSTITUA ABAIXO PELO SEU URL DO GOOGLE APPS SCRIPT
+        const scriptURL = 'https://script.google.com/macros/s/AKfycby3sYRxr2f_TdS4FO9-jMycfJ40XwwSEU-tPLP3J_cYyP35LQ9axRcMvZFkOeL89WW4Pg/exec'; 
+        const form = document.getElementById('oracle-form');
+        const btn = document.getElementById('submit-btn');
+        const msg = document.getElementById('success-msg');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            
+            // Honeypot check
+            if(form.bot_check.value !== "") return;
+
+            btn.value = "ENCRYPTING...";
+            btn.disabled = true;
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    form.style.display = 'none';
+                    msg.style.display = 'block';
+                })
+                .catch(error => {
+                    btn.value = "ERROR - RETRY";
+                    btn.disabled = false;
+                });
+        });
+    </script>
+</body>
+</html>
